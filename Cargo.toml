@@ -1,0 +1,25 @@
+[package]
+name = "keepwn"
+version = "0.1.0"
+authors = ["surrel <1993113+gsurrel@users.noreply.github.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+keepass = "0.4.6"
+#checkpwn = "0.3.7"
+rpassword = "4.0.5"
+clap = "2.33.1"
+fast_chemail = "0.9.6"
+
+# Additional dependencies from checkpwn
+colored = "1.9"
+sha-1 = { version = "0.8.2", default-features = false }
+hex = "0.4.2"
+reqwest = { version = "0.10.4", features = ["blocking"] }
+zeroize = "1.1.0"
+serde = { version = "1.0.106", features = ["derive"] }
+
+[profile.dev.package."*"]
+opt-level = 2
