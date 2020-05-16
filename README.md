@@ -4,6 +4,16 @@ Checks a KeePass database against the [Have I Been Pwned](https://haveibeenpwned
 
 *Note: this tool performs network requests, but send only a fraction of the password hash, thus protecting your password.*
 
+# Overview
+
+1. KeePwn opens the database (as read-only),
+2. iterate over all entries,
+3. retrieve the password,
+4. hashes it,
+5. get the first chars of the hash to query the HIBP password API,
+6. check whether the remaining of the password hash is present in the API's response,
+7. prints to the terminal the result,
+
 # Usage
 
 ```console
@@ -27,6 +37,10 @@ FLAGS:
 ARGS:
     <INPUT>    Sets the KeePass file to use
 ```
+
+# It is slow!
+
+Yes, because there is a [rate-limiting from the API, enforcing a 1.5s delay between requests](https://haveibeenpwned.com/API/v3#RateLimiting).
 
 # Development
 
