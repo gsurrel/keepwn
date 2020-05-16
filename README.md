@@ -1,6 +1,6 @@
 # KeePwn
 
-Checks a KeePass database against the [Have I Been Pwned](https://haveibeenpwned.com/) service.
+Checks a [KeePass](https://keepass.info/) ([Wikipedia](https://en.wikipedia.org/wiki/KeePass)) database against the [Have I Been Pwned](https://haveibeenpwned.com/) service.
 
 *Note: this tool performs network requests, but send only a fraction of the password hash, thus protecting your password.*
 
