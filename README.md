@@ -38,13 +38,27 @@ ARGS:
     <INPUT>    Sets the KeePass file to use
 ```
 
+# Example
+
+```console
+$ ./keepwn test_db.kdbx -e -p
+Password to unlock test_db.kdbx: 
+Entry 'Some title' (user 'totally_not_in_any_hibp_database_leak@nohost.tld'): password not breached ✅
+Entry '' (user 'admin@example.com'): password breached ⚠️
+Entry 'Entry without email but username' (user 'MyNickname'): password breached ⚠️
+
+List of unique emails for manual check:
+admin@example.com
+totally_not_in_any_hibp_database_leak@nohost.tld
+```
+
 # It is slow!
 
 Yes, because there is a [rate-limiting from the API, enforcing a 1.5s delay between requests](https://haveibeenpwned.com/API/v3#RateLimiting).
 
 # Development
 
-The test database `test_db.kbdx` is locked with the `password` password, and contains three entries:
+The test database `test_db.kdbx` is locked with the `password` password, and contains three entries:
 
 - Root node, renamed as MyRoot
     - Entry:
